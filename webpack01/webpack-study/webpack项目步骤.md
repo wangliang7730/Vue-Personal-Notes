@@ -105,3 +105,33 @@ module:{
 ```
 
 其中use中的使用顺序是从右往左
+## 使用webpack处理css中的路径
+1. 运行`cnpm i url-loader file-loader --save-dev`
+2. 在`webpack.config.js`中添加处理url路径的loader模块：
+```
+{ test: /\.(png|jpg|gif)$/, use: 'url-loader' }
+```
+3. 可以通过`limit`指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码：
+```
+{ test: /\.(png|jpg|gif)$/, use: 'url-loader?limit=43960' },
+```
+
+## 使用babel处理高级JS语法
+1. 运行`cnpm i babel-core babel-loader babel-plugin-transform-runtime --save-dev`安装babel的相关loader包
+2. 运行`cnpm i babel-preset-es2015 babel-preset-stage-0 --save-dev`安装babel转换的语法
+3. 在`webpack.config.js`中添加相关loader模块，其中需要注意的是，一定要把`node_modules`文件夹添加到排除项：
+```
+{ test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
+```
+4. 在项目根目录中添加`.babelrc`文件，并修改这个配置文件如下：
+```
+{
+    "presets":["es2015", "stage-0"],
+    "plugins":["transform-runtime"]
+}
+```
+5. **注意：语法插件`babel-preset-es2015`可以更新为`babel-preset-env`，它包含了所有的ES相关的语法；**
+
+## 相关文章
+[babel-preset-env：你需要的唯一Babel插件](https://segmentfault.com/p/1210000008466178)
+[Runtime transform 运行时编译es6](https://segmentfault.com/a/1190000009065987)
