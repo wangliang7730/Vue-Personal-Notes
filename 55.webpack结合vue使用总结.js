@@ -1,4 +1,5 @@
 // 如何在 webpack 构建的项目中，使用 Vue 进行开发
+//（完整代码https://github.com/wangliang7730/Vue-Personal-Notes/blob/master/webpack-vue01/webpack-vue/src/main.js）
 
 // 复习 在普通网页中如何使用vue： 
 // 1. 使用 script 标签 ，引入 vue 的包
