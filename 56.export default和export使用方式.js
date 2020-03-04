@@ -1,3 +1,4 @@
+//完整源码https://github.com/wangliang7730/Vue-Personal-Notes/tree/master/%E8%AF%BE%E4%BB%B6%2B%E6%BA%90%E4%BB%A3%E7%A0%81/day6/%E4%BB%A3%E7%A0%81/02.webpack-vue1/src
 // 这是 Node 中向外暴露成员的形式：
 // module.exports = {}
 
